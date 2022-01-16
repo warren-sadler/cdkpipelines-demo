@@ -6,6 +6,7 @@ import {
   ShellStep,
 } from "aws-cdk-lib/pipelines";
 import { Construct } from "constructs";
+import { CdkpipelinesDemoStage } from "./cdkpipelines-demo-stage";
 
 export class CdkpipelinesDemoPipelineStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps) {
@@ -20,5 +21,6 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
         commands: ["npm install", "npm run build", "npx cdk synth"],
       }),
     });
+    pipeline.addStage(new CdkpipelinesDemoStage(this, "pre-prod"));
   }
 }
