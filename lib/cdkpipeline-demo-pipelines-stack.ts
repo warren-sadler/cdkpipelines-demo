@@ -17,7 +17,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
           "warren-sadler/cdkpipelines-demo",
           "main"
         ),
-        commands: ["npm ci", "npm run build", "npx cdk synth"],
+        commands: ["npm install", "npm run build", "npx cdk synth"],
       }),
     });
   }
