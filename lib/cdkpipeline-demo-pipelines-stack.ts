@@ -14,7 +14,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
       pipelineName: "MyServicePipeline",
       synth: new ShellStep("Synth", {
         input: CodePipelineSource.gitHub(
-          "warren-sadler/cdk-pipelines-demo",
+          "warren-sadler/cdkpipelines-demo",
           "main"
         ),
         commands: ["npm ci", "npm run build", "npx cdk synth"],
